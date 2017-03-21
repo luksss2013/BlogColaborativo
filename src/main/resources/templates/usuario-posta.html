@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="fragments/headerinc :: head"></th:block>
+	<title>Formulário Registro</title>
+</head>
+<body>
+	<form action="#" th:action="@{/postar-artigo}" th:object="${artigo}" method="POST">
+		Titulo: <input type="text" th:field="*{titulo}"	/>
+		<p th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}">Erro de nome</p>
+		
+		Subtitulo: <input type="text" th:field="*{subtitulo}"	/>
+		<p th:if="${#fields.hasErrors('subtitulo')}" th:errors="*{subtitulo}">Erro de nome</p>
+		
+		Tema: <input type="text" th:field="*{tema}"	/>
+		<p th:if="${#fields.hasErrors('tema')}" th:errors="*{tema}">Erro de nome</p>
+		
+		Conteudo: <input type="text" th:field="*{conteudo}"	/>
+		<p th:if="${#fields.hasErrors('conteudo')}" th:errors="*{conteudo}">Erro de nome</p>
+		
+		Autor: <input type="text" th:field="*{autor}"	/>
+		<p th:if="${#fields.hasErrors('autor')}" th:errors="*{autor}">Erro de nome</p>
+		
+		Dia: <input type="text" th:field="*{dia}"	/>
+		<p th:if="${#fields.hasErrors('dia')}" th:errors="*{dia}">Erro de nome</p>
+		
+		Mes: <input type="text" th:field="*{mes}"	/>
+		<p th:if="${#fields.hasErrors('mes')}" th:errors="*{mes}">Erro de nome</p>
+		
+		Ano: <input type="text" th:field="*{ano}"	/>
+		<p th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}">Erro de nome</p>
+		
+		Horario: <input type="text" th:field="*{horario}"	/>
+		<p th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}">Erro de nome</p>
+		
+		Minuto: <input type="text" th:field="*{minuto}"	/>
+		<p th:if="${#fields.hasErrors('minuto')}" th:errors="*{minuto}">Erro de nome</p>
+		<button type="submit"	>Cadastrar</button>
+	</form>
+</body>
+</html>

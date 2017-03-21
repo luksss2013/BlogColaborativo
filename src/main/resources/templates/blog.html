@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+</head>
+<body>
+	<div th:include="fragments/header :: cabecalho">
+	</div>
+		<div class="col-md-3">
+			<form action="#" th:action="@{busca-artigo}" method="POST">
+				<input type="text" placeholder="Artigo" name="nome-artigo"/>
+				<input type="submit" />
+			</form>
+		</div>
+		<div class="text-center col-md-6">
+			<tr th:each="artigo : ${artigo}">
+				<a th:href="${'artigo/' + artigo.id}" th:text="${artigo.titulo}"></a><br></br>
+				<h3 th:text="${artigo.subtitulo}"></h3><br></br>
+				Tema: <span th:text="${artigo.tema}"></span><br></br>
+				<p th:text="${artigo.conteudo}"></p><br></br>
+			</tr>
+		</div>
+		<div class="col-md-3"></div>
+    <div th:include="fragments/footer :: footer">
+    </div>
+</body>
+</html>

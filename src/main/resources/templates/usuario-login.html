@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<th:block th:include="fragments/headerinc :: head"></th:block>
+	<title>Formulário Login</title>
+</head>
+<body>
+	<form action="#" th:action="@{/login}" method="POST">
+	
+		<input type="text" name="username"/>
+		
+		<input type="text" name="password"/>
+		
+		<button type="submit"	>Logar</button>
+	</form>
+</body>
+</html>

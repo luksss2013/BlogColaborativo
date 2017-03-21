@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="fragments/headerinc :: head"></th:block>
+	<title>Formulário Registro</title>
+</head>
+<body>
+	<form action="#" th:action="@{/registro}" th:object="${usuario}" method="POST">
+		<input type="text" th:field="*{nomeUsuario}"	/>
+		<p th:if="${#fields.hasErrors('nomeUsuario')}" th:errors="*{nomeUsuario}">Erro de nome</p>
+		
+		<input type="text" th:field="*{senhaUsuario}"	/>
+		<p th:if="${#fields.hasErrors('senhaUsuario')}" th:errors="*{senhaUsuario}">Erro de senha</p>
+		
+		<input type="text" th:field="*{emailUsuario}"	/>
+		<p th:if="${#fields.hasErrors('emailUsuario')}" th:errors="*{emailUsuario}">Erro de Email</p>
+		
+		<input type="text" th:field="*{idadeUsuario}"	/>
+		<p th:if="${#fields.hasErrors('idadeUsuario')}" th:errors="*{idadeUsuario}">Idade tem que ser maior que 18</p>
+		
+		<button type="submit"	>Cadastrar</button>
+	</form>
+</body>
+</html>

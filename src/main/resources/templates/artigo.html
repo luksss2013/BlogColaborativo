@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+</head>
+<body>
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<a href="/blog"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	</div>
+	<div class="col-md-3"></div>
+	
+	<div class="col-md-3"></div>
+		<div class="col-md-6">
+				<div class="text-center">
+					<h1 th:text="*{artigo.titulo}"></h1>
+					<h2 th:text="*{artigo.subtitulo}"></h2>
+				</div>
+			<p th:text="'Tema: ' + *{artigo.tema}"></p>
+			<p align="justify" th:text="*{artigo.conteudo}"></p>
+			<p th:text="'Postado em: ' + *{artigo.dia} + '/' + *{artigo.mes} + '/' + *{artigo.ano} + ' as ' + *{artigo.horario} + ':' + *{artigo.minuto}"></p>
+			<p th:text="'Escrito por: ' + *{artigo.autor}"></p>
+		</div>
+	<div class="col-md-3"></div>
+    <div th:include="fragments/footer :: footer">
+    </div>
+</body>
+</html>
